@@ -7,7 +7,7 @@ En este repositorio podrá encontrar el esquema de Unit Test basado en pytest, a
 Se realizará la prueba de las tres clases (Ship, Cruise & Cargo), como también se realizará un test global del sistema.
 
 ## Test Cases
-### test_ship.py
+### test_ships.py
 ```python
 import pytest
 from src.ships import Ship
@@ -25,7 +25,7 @@ def test_is_ship() -> None:
             ship: Ship = Ship(ship[0], ship[1])
             assert (ship.is_worth_it() >= 20) == True 
 ```
-## test_cargo.py
+## test_cargos.py
 ```python
 import pytest
 from src.ships import Cargo
@@ -44,7 +44,7 @@ def test_is_cargo() -> None:
             cargo: Cargo = Cargo(cargo[0], cargo[1], cargo[2], cargo[3])
             assert (cargo.is_worth_it() >= 20) == True
 ```
-## test_cruise.py
+## test_cruises.py
 ```python
 import pytest
 from src.ships import Cruise
