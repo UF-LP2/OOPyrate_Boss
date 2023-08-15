@@ -1,9 +1,14 @@
+from os.path import exists
 import pytest
-from src.ships import Cargo
+
+if exists('../src/Cargo.py'):
+    from src.Cargo import Cargo
+else:
+    from src.ships import Cargo
 
 def test_is_cargo() -> None:
     listaCargos: list[int, float, int, int] = [
-        [23, 0.25, 123, 45, ],
+        [23, 0.25, 123, 45],
         [123, 1, 34, 34],
         [78, 0.5, 15, 65],
         [2, 0.25, 34, 70]
