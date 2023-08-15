@@ -62,3 +62,5 @@ def test_is_Cruise() -> None:
             cruise: Cruise = Cruise(cruise[0], cruise[1], cruise[2])
             assert (cruise.is_worth_it() >= 20) == True 
 ```
+---
+##### UF-FICEN LP2 2023 - [Ezequiel Augusto Stanganelli](https://github.com/eastanganelli)
