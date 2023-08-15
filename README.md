@@ -14,10 +14,7 @@ from src.ships import Ship
 
 def test_is_ship() -> None:
     listaShip: list[int, int] = [
-        [23, 123],
-        [123, 34],
-        [78, 15],
-        [23, 30]
+        # Static Data set
     ]
     
     with pytest.raises(ValueError):
@@ -33,10 +30,7 @@ from src.ships import Cargo
 
 def test_is_cargo() -> None:
     listaCargos: list[int, float, int, int] = [
-        [23, 0.25, 123, 45],
-        [123, 1, 34, 34],
-        [78, 0.5, 15, 65],
-        [2, 0.25, 34, 70]
+        # Static Data set
     ]
     
     with pytest.raises(ValueError): 
@@ -51,10 +45,7 @@ from src.ships import Cruise
         
 def test_is_Cruise() -> None:
     listaCruise: list[int, int, int] = [
-        [23, 123, 45],
-        [123, 34, 34],
-        [78, 15, 65],
-        [23, 30, 80]
+        # Static Data set
     ]
     
     with pytest.raises(ValueError):
