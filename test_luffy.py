@@ -1,8 +1,23 @@
+from os.path import exists
 import pytest
 import csv
 import requests
 import codecs
-from src.ships import Ship, Cargo, Cruise
+
+if exists('../src/Cargo.py'):
+    from src.Ship import Ship
+else:
+    from src.ships import Ship
+
+if exists('../src/Cargo.py'):
+    from src.Cruise import Cruise
+else:
+    from src.ships import Cruise
+
+if exists('../src/Cargo.py'):
+    from src.Cargo import Cargo
+else:
+    from src.ships import Cargo
 
 def test_with_file():
     url="https://my.api.mockaroo.com/oop_pirate.csv?key=44ac9940"
@@ -13,19 +28,22 @@ def test_with_file():
         ...
     else:
         myShips: list[any] = []
-        next(ShipLists)
+        header: bool = True
         for ship in ShipLists:
-            try:
-                if ship[2] == '' and ship[3] == '':
-                    myShips.append(Ship(int(ship[0]), int(ship[1])))
-                elif ship[3] == '':
-                    myShips.append(Cruise(int(ship[2]), int(ship[0]), int(ship[1])))
-                else:
-                    if ship[2] == '':
-                        continue
-                    myShips.append(Cargo(int(ship[2]), float(ship[3]), int(ship[0]), int(ship[1])))
-            except ValueError:
-                continue
+            if not header:
+                try:
+                    if ship[2] == '' and ship[3] == '':
+                        myShips.append(Ship(int(ship[0]), int(ship[1])))
+                    elif ship[3] == '':
+                        myShips.append(Cruise(int(ship[2]), int(ship[0]), int(ship[1])))
+                    else:
+                        if ship[2] == '':
+                            continue
+                        myShips.append(Cargo(int(ship[2]), float(ship[3]), int(ship[0]), int(ship[1])))
+                except ValueError:
+                    continue
+            else:
+                header = False
         with pytest.raises(ValueError):
             for ship_ in myShips:
                 assert (ship_.is_worth_it() >= 20) == True
