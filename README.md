@@ -4,7 +4,8 @@ En este repositorio podrá encontrar el esquema de Unit Test basado en pytest, a
 <br>La prueba del TP se realiza de forma automatizada utilizando Github Actions y se activará cuando se realice PUSH en la rama ENTREGA.
 <br>Cuantos más <b>TESTS PASS</b> tenga el TP, mejor valoración.
 
-Se realizará la prueba de las tres clases (Ship, Cruise & Cargo), como también se realizará un test global del sistema.
+Se realizará la prueba de las tres clases (Ship, Cruise & Cargo), como también se realizará un test general.
+<br>El test general, descarga un archivo con muchos datos y llevará el código a sus limites.
 
 ## Test Cases
 ### test_ships.py
@@ -13,9 +14,7 @@ import pytest
 from src.ships import Ship
 
 def test_is_ship() -> None:
-    listaShip: list[int, int] = [
-        # Static Data set
-    ]
+    listaShip: list[int, int] = [ """static data set""" ]
     
     with pytest.raises(ValueError):
         for ship in listaShip:
@@ -27,11 +26,8 @@ def test_is_ship() -> None:
 import pytest
 from src.ships import Cargo
 
-
 def test_is_cargo() -> None:
-    listaCargos: list[int, float, int, int] = [
-        # Static Data set
-    ]
+    listaCargos: list[int, float, int, int] = [ """static data set""" ]
     
     with pytest.raises(ValueError): 
         for cargo in listaCargos:
@@ -44,9 +40,7 @@ import pytest
 from src.ships import Cruise
         
 def test_is_Cruise() -> None:
-    listaCruise: list[int, int, int] = [
-        # Static Data set
-    ]
+    listaCruise: list[int, int, int] = [ """static data set""" ]
     
     with pytest.raises(ValueError):
         for cruise in listaCruise:
