@@ -1,4 +1,4 @@
-# OOPIrate_Boss
+# OOPyrate_Boss
 
 En este repositorio podrá encontrar el esquema de Unit Test basado en pytest, apra realizar las pruebas unitarias del mini TP TP_OOPirate.
 <br>La prueba del TP se realiza de forma automatizada utilizando Github Actions y se activará cuando se realice PUSH en la rama ENTREGA.
